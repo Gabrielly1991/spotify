@@ -35,5 +35,4 @@ describe('Landing Page Tests', () => {
     const link = document.querySelector('.btn-link').href;
     expect(link).toBe('https://open.spotify.com/');
   });
-  
 });
