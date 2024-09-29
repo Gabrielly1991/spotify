@@ -1,18 +1,21 @@
-name: Continuos Integration
+name: Continuous Integration
 
 on: [pull_request, push]
 
 jobs:
-  continuos-integration:
-    runs-on: ubuntu-lastest
+  continuous-integration:
+    runs-on: ubuntu-latest
 
     steps:
-      -uses: actions/checkout@v3
-      -name: Using Node.js
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Using Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 20.x
-      -name: run install, test
-      run: |
-        npm install
-        npm run test
+          node-version: '20.x'
+      
+      - name: Install and Test
+        run: |
+          npm install
+          npm run test
